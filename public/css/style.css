@@ -1,0 +1,430 @@
+/* Reset */
+*
+/* *::before,
+*::after */ {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 1%;
+    padding-top: 20px;
+    background-color: hsl(0, 2%, 10%) !important;
+    font-family: 'Actor';
+    font-size: 18px;
+    color: white !important;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+/* Text */
+.page-title {
+    color: #6b50d5;
+    text-align: center;
+    font-size: 32px;
+}
+
+/* 1. Cards */
+.card {
+    width: clamp(180px, 50%, 150%);
+    height: 100%;
+    padding: 1%;
+    background: hsl(0, 2%, 15%) !important;
+    transition: all 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px !important;
+}
+
+
+/* 2. Buttons */
+/* Sliding Button */
+.cssbuttons-io-button {
+    background: #6b50d5;
+    color: white;
+    padding: 1%;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
+    min-width: 120px;
+    height: 70px;
+}
+
+.cssbuttons-io-button .icon {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.9em;
+    width: 2.2em;
+    border-radius: 8px;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+/* Blue Sliding button */
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+}
+
+.button::before {
+    top: 0;
+    border-bottom-width: 0;
+}
+
+.button::after {
+    bottom: 0;
+    border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+    outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+    right: 3px;
+    left: 3px;
+}
+
+.button:active::before {
+    top: 3px;
+}
+
+.button:active::after {
+    bottom: 3px;
+}
+
+.button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+}
+
+.button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+}
+
+.button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: hsl(355, 100%, 64%);
+    transform: skew(-15deg);
+    transition: all .2s ease;
+}
+
+.button_text {
+    position: relative;
+}
+
+.button:hover {
+    color: #0f1923;
+}
+
+.button:hover .button_sl {
+    width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+    background-color: #fff;
+}
+
+/* 3. Spinner */
+.spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+    width: 100px;
+    height: 100px;
+    animation: spin 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
+}
+
+.show {
+    display: block;
+}
+
+/* 4. Input fields */
+.form__group {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid hsl(0, 0%, 80%);
+    outline: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: hsl(0, 0%, 80%);
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    /* border-image: linear-gradient(to right, #116399, #38caef); */
+    border-image: linear-gradient(to right, hsl(263, 66%, 58%), hsl(355, 100%, 64%));
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    background: linear-gradient(to right, hsl(263, 66%, 58%), hsl(355, 100%, 64%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+/* 5. Dropdowns */
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.active {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.dropdown-new {
+    position: relative !important;
+    padding: 7px 0px;
+    width: 90% !important;
+    max-width: 363px !important;
+}
+
+.select-button {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-radius: 12px !important;
+    outline: 0;
+    padding: 3%;
+    font-size: 17px;
+    color: hsl(0, 0%, 80%);
+    background: transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-button:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.caret {
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: Ø.3s;
+}
+
+.caret-reverse {
+   transform: rotate(180deg);
+}
+
+.dropdown-menu-new {
+    list-style: none;
+    border-radius: 12px;
+    position: absolute;
+    top: 3.35em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 1;
+    z-index: 1;
+    /* display: none; */
+}
+
+.dropdown-menu-new li{
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-radius: 12px !important;
+    outline: 0;
+    padding: 3%;
+    font-size: 17px;
+    color: hsl(0, 0%, 80%);
+    background: transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 15%);
+}
+
+.dropdown-menu-new li:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+/* Animaze 1.0 */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1000px) {
+    .cssbuttons-io-button {
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    .cssbuttons-io-button .icon {
+        width: 100%;
+        display: none;
+    }
+
+    .cssbuttons-io-button .icon svg {
+        width: 100%;
+        display: none;
+    }
+
+    .card {
+        width: clamp(270px, 50%, 150%);
+    }
+}
+
+@media only screen and (max-width: 300px) {
+
+    .card {
+        width: 90%;
+    }
+}

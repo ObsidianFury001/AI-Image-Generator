@@ -1,0 +1,13 @@
+@hostname = http://localhost:5000
+
+###
+get {{hostname}}
+
+###
+post {{hostname}}/openai/generateimage
+Content-Type: application/json
+
+{
+    "prompt": "Man on a moon",
+    "size": "medium"
+}

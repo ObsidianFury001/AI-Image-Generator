@@ -5,67 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Image Generator</title>
+
     <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/alignment.css">
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-    <div class="spinner show">
-        <div class="spinner1"></div>
+    <!-- <div class="center">
+        <div class="spinner">
+            <div class="spinner1"></div>
+        </div>
+    </div> -->
+    <div class="wave-spinner show-spinner">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    <div class="title"><h1 class="page-title">AI IMAGE GENERATOR</h1><br><br>
     </div>
-    <div class="title"><h1 class="page-title">AI IMAGE GENERATOR</h1><br>
-    </div>
-    <div class="text-align-center">
         <div class="d-flex align-items-center justify-content-center">
-            <div class="card">
+            <form id="image-form" class="card">
                 <div class="form__group field">
-                    <input required="" placeholder="Name" class="form__field"></textarea>
-                    <label class="form__label" for="name">Enter a Prompt</label>
+                    <input id="prompt" placeholder="Name" class="form__field" required></textarea>
+                    <label class="form__label" for="name">Describe your Image</label>
+                </div>
+                <br>
+                <div class="dropdown" id="ImageDropDown">
+                    <input id="imageSize" type="text" placeholder="Image Size" readonly value="">
+                    <div class="option">
+                        <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
+                        <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
+                        <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
+                    </div>
                 </div>
 
-                <div class="dropdown-new">
-                    <div class="select-button">
-                        <span class="selected">Image Size</span>
-                        <div class="caret"></div>
+                <!--<br><br>
+                 <div class="dropdown" id="ImageDropDown">
+                    <input id="ImageSizeDropDown" type="text" placeholder="Image Size" readonly>
+                    <div class="option">
+                        <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
+                        <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
+                        <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
                     </div>
-                    <!-- <input type="hidden" name="size"> -->
-                    <ul class="dropdown-menu-new">
-                        <li id="small" class="menu-item-active" value="Small">Small</li>
-                        <li id="medium" value="Medium">Medium</li>
-                        <li id="large" value="Large">Large</li>
-                    </ul>
-                </div>
-                <br><br><br><br><br>
-                <div class="dropdown-new">
-                    <div class="select-button">
-                        <span class="selected">Number of Images</span>
-                        <div class="caret"></div>
-                    </div>
-                    <!-- <input type="hidden" name="size"> -->
-                    <ul class="dropdown-menu-new">
-                        <li class="menu-item-active" value="1">1</li>
-                        <li value="2">2</li>
-                        <li value="3">3</li>
-                        <li value="4">4</li>
-                    </ul>
-                </div><br>
-                <!-- <button class="btn btn-sm btn-primary">Generate</button> -->
-                <!-- <div class="form-field"> -->
-                    <!-- <button class="cssbuttons-io-button"> Generate
-                        <div class="icon">
-                          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
-                        </div>
-                    </button> -->
-                    <button class="button">
-                        <span class="button_lg">
-                            <span class="button_sl"></span>
-                            <span class="button_text">Generate Image</span>
-                        </span>
-                    </button>
-                <!-- </div> -->
+                </div> -->
+
+                <br><br>
+                <button class="button" type="submit" onsubmit="SubmitForm(event)">
+                    <span class="button_lg">
+                        <span class="button_sl"></span>
+                        <span class="button_text">Generate Image</span>
+                    </span>
+                </button><br><br><br>
             </div>
-        </div><br><br><br><br>
     </div>
-    <script src="js/dropdown.js"></script>
+    <br><br>
+    
+    <script>
+        // Set the value of the selected item to the dropdown text 
+        function show(optionText){
+            // console.log(optionText);
+            document.querySelector('#imageSize').value = optionText;
+        }
+        // Open and close dropdown
+        const DropDown = document.querySelector("#ImageDropDown");
+        DropDown.onclick = () => { 
+            DropDown.classList.toggle('open');
+        };
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

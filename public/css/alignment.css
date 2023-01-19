@@ -1,0 +1,48 @@
+
+/* Alignment */
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.center-flex { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.place-items-center {
+    place-items: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-flex-end{
+    justify-content: flex-end;
+}
+
+.align-items-flex-start{
+    align-items: flex-start;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
+}

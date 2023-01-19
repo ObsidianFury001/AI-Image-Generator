@@ -1,100 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family-Poppins:100.200,300,400,500,600,700,800,900');
+
+:root {
+    --primary: hsl(252, 61%, 57%);
+}
+
 /* Reset */
 *
+
 /* *::before,
-*::after */ {
+*::after */
+    {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
+/* 
+---------- 0. Title ---------- 
+---------- 1. Cards  ---------- 
+---------- 2. Buttons ---------- 
+---------- 3. Spinners ---------- 
+---------- 4. Text Fields ---------- 
+---------- 5. Dropdowns ---------- 
+*/
+
 body {
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Actor'; */
+    font-weight: 500;
     padding: 1%;
     padding-top: 20px;
+    min-height: 100vh;
     background-color: hsl(0, 2%, 10%) !important;
+    /* background-color: hsl(0, 0%, 94%); */
+    color: black;
     font-family: 'Actor';
     font-size: 18px;
-    color: white !important;
 }
 
-.center {
-    display: grid;
-    place-items: center;
-}
-
-/* Text */
+/* ---------- 0. Title ----------*/
 .page-title {
-    color: #6b50d5;
+    color: var(--primary);
     text-align: center;
     font-size: 32px;
 }
 
-/* 1. Cards */
+/* ---------- 1. Cards ----------*/
 .card {
-    width: clamp(180px, 50%, 150%);
+    width: clamp(180px, 35%, 150%);
     height: 100%;
     padding: 1%;
-    background: hsl(0, 2%, 15%) !important;
+    background-color: hsl(0, 0%, 95%);
+    /* background: hsl(0, 0%, 97%) !important; */
     transition: all 300ms;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 15px !important;
+    z-index: 100;
 }
 
 
-/* 2. Buttons */
-/* Sliding Button */
-.cssbuttons-io-button {
-    background: #6b50d5;
-    color: white;
-    padding: 1%;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 8px;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
-    overflow: hidden;
-    position: relative;
-    width: 70%;
-    min-width: 120px;
-    height: 70px;
-}
-
-.cssbuttons-io-button .icon {
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.9em;
-    width: 2.2em;
-    border-radius: 8px;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-    right: 0.3em;
-    transition: all 0.3s;
-}
-
-.cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
-}
-
-.cssbuttons-io-button .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #7b52b9;
-}
-
-.cssbuttons-io-button:hover .icon svg {
-    transform: translateX(0.1em);
-}
-
-.cssbuttons-io-button:active .icon {
-    transform: scale(0.95);
-}
+/* ---------- 2. Buttons ----------*/
 
 /* Blue Sliding button */
 .button {
@@ -216,37 +184,106 @@ body {
     background-color: #fff;
 }
 
-/* 3. Spinner */
+/* ---------- 3. Spinner ----------*/
 .spinner {
     background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    top: 70px;
+    width: 470px;
+    height: 470px;
     animation: spin 1.7s linear infinite;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 500px;
     filter: blur(1px);
+    z-index: -1;
     box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
 }
 
 .spinner1 {
     background-color: rgb(36, 36, 36);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    width: 470px;
+    height: 470px;
+    border-radius: 5000px;
     filter: blur(10px);
+    z-index: -1;
+}
+
+.wave-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0,0,0,.7);
+    border: cyan 2px;
+    z-index: -1;
+    opacity: 0;
+}
+.show-spinner {
+    opacity: 1;
+    z-index: 101;
+}
+.wave {
+    width: 5px;
+    height: 100px;
+    /* background: linear-gradient(45deg, cyan, #fff); */    
+    background: linear-gradient(45deg, hsl(263, 66%, 58%), cyan, hsl(355, 100%, 64%));
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.wave:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.wave:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.wave:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.wave:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.wave:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+.wave:nth-child(10) {
+    animation-delay: 0.9s;
 }
 
 .show {
     display: block;
 }
 
-/* 4. Input fields */
+/* ---------- 4.Text fields ----------*/
 .form__group {
     position: relative;
     padding: 20px;
     margin-top: 10px;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px !important;
 }
 
 .form__field {
@@ -256,10 +293,11 @@ body {
     border-bottom: 2px solid hsl(0, 0%, 80%);
     outline: 0;
     font-size: 17px;
-    color: #fff;
+    color: hsl(0, 0%, 20%);
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    caret-color: var(--primary);
 }
 
 .form__field::placeholder {
@@ -278,7 +316,7 @@ body {
     display: block;
     transition: 0.2s;
     font-size: 17px;
-    color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 60%);
     pointer-events: none;
 }
 
@@ -310,88 +348,106 @@ body {
     box-shadow: none;
 }
 
-/* 5. Dropdowns */
-.menu-open {
-    display: block;
-    opacity: 1;
-}
-
-.active {
-    background-color: hsl(0, 0%, 10%);
-}
-
-.dropdown-new {
-    position: relative !important;
-    padding: 7px 0px;
-    width: 90% !important;
-    max-width: 363px !important;
-}
-
-.select-button {
-    font-family: inherit;
+/* ---------- 5. Dropdowns ----------*/
+.dropdown {
+    position: relative;
+    margin: 5px;
+    height: 50px;
     width: 100%;
-    border: none;
-    border-radius: 12px !important;
-    outline: 0;
-    padding: 3%;
-    font-size: 17px;
-    color: hsl(0, 0%, 80%);
-    background: transparent;
-    transition: all 0.3s;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 360px !important;
 }
 
-.select-button:hover {
-    background-color: hsl(0, 0%, 10%);
-}
-
-.caret {
-    height: 0;
-    width: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid #fff;
-    transition: Ø.3s;
-}
-
-.caret-reverse {
-   transform: rotate(180deg);
-}
-
-.dropdown-menu-new {
-    list-style: none;
-    border-radius: 12px;
+.dropdown::before {
+    content: '';
     position: absolute;
-    top: 3.35em;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    opacity: 1;
-    z-index: 1;
-    /* display: none; */
-}
-
-.dropdown-menu-new li{
-    font-family: inherit;
-    width: 100%;
+    right: 20px;
+    top: 18px;
+    z-index: 100;
+    width: 8px;
+    height: 8px;
     border: none;
-    border-radius: 12px !important;
-    outline: 0;
-    padding: 3%;
-    font-size: 17px;
-    color: hsl(0, 0%, 80%);
-    background: transparent;
-    transition: all 0.3s;
-    cursor: pointer;
-    background-color: hsl(0, 0%, 15%);
+    border-radius: 2px;
+    border-left: 3px solid hsl(0, 0%, 20%);
+    border-bottom: 3px solid hsl(0, 0%, 20%);
+    transform: rotate(-45deg);
+    pointer-events: none;
+    transition: all .2s ease-in-out;
 }
 
-.dropdown-menu-new li:hover{
-    background-color: hsl(0, 0%, 10%);
+.dropdown.open:before {
+    transform: rotate(-225deg);
+    top: 22px;
 }
+
+.dropdown input {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dropdown .option {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    pointer-events: none;
+}
+
+.dropdown.open .option {
+    z-index: 1000;
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.option-items {
+    width: 100%;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.option-items:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.option-items ion-icon {
+    position: relative;
+    /* font-size: 1.2em; */
+    top: 3px;
+    left: 0px;
+    margin-right: 10px;
+    width: 30px;
+}
+
+.small-icon {
+    font-size: 14px;
+}
+
+.medium-icon {
+    font-size: 20px;
+}
+
+.large-icon {
+    font-size: 25px;
+}
+
 
 /* Animaze 1.0 */
 @keyframes spin {
@@ -400,31 +456,39 @@ body {
     }
 }
 
-/* Media Queries */
-@media only screen and (max-width: 1000px) {
-    .cssbuttons-io-button {
-        min-width: 100px;
-        justify-content: center;
+@keyframes wave {
+    0% {
+        transform: scale(0);
     }
 
-    .cssbuttons-io-button .icon {
-        width: 100%;
-        display: none;
+    50% {
+        transform: scale(1);
     }
 
-    .cssbuttons-io-button .icon svg {
-        width: 100%;
-        display: none;
-    }
-
-    .card {
-        width: clamp(270px, 50%, 150%);
+    100% {
+        transform: scale(0);
     }
 }
 
-@media only screen and (max-width: 300px) {
+
+/* Media Queries */
+@media only screen and (max-width: 1190px) {
+    .card {
+        width: clamp(270px, 50%, 150%);
+    }
+
+    .dropdown {
+        width: clamp(270px, 90%, 150%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
 
     .card {
         width: 90%;
+    }
+
+    .dropdown {
+        width: clamp(100px, 90%, 150%);
     }
 }

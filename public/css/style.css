@@ -5,10 +5,8 @@
 }
 
 /* Reset */
-*
-
-/* *::before,
-*::after */
+*,*::before,
+*::after
     {
     box-sizing: border-box;
     margin: 0px;
@@ -40,9 +38,14 @@ body {
 
 /* ---------- 0. Title ----------*/
 .page-title {
-    color: var(--primary);
+    /* color: var(--primary); */
+    background: -webkit-linear-gradient(45deg, var(--primary), rgb(244, 165, 28));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
-    font-size: 32px;
+    font-size: 45px;
+    font-weight: bold;
 }
 
 /* ---------- 1. Cards ----------*/
@@ -274,7 +277,7 @@ body {
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 /* ---------- 4.Text fields ----------*/
@@ -448,6 +451,14 @@ body {
     font-size: 25px;
 }
 
+/* ---------- 6. Other Elements ----------*/
+.display-none {
+    display: none;
+}
+#image-viewer {
+    width: fit-content;
+    height: 100%;
+}
 
 /* Animaze 1.0 */
 @keyframes spin {

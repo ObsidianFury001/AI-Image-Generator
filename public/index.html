@@ -22,7 +22,7 @@
             <div class="spinner1"></div>
         </div>
     </div> -->
-    <div class="wave-spinner show-spinner">
+    <div id="spinner" class="wave-spinner">
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
@@ -36,55 +36,49 @@
       </div>
     <div class="title"><h1 class="page-title">AI IMAGE GENERATOR</h1><br><br>
     </div>
-        <div class="d-flex align-items-center justify-content-center">
-            <form id="image-form" class="card">
-                <div class="form__group field">
-                    <input id="prompt" placeholder="Name" class="form__field" required></textarea>
-                    <label class="form__label" for="name">Describe your Image</label>
-                </div>
-                <br>
-                <div class="dropdown" id="ImageDropDown">
-                    <input id="imageSize" type="text" placeholder="Image Size" readonly value="">
-                    <div class="option">
-                        <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
-                        <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
-                        <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
-                    </div>
-                </div>
-
-                <!--<br><br>
-                 <div class="dropdown" id="ImageDropDown">
-                    <input id="ImageSizeDropDown" type="text" placeholder="Image Size" readonly>
-                    <div class="option">
-                        <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
-                        <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
-                        <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
-                    </div>
-                </div> -->
-
-                <br><br>
-                <button class="button" type="submit" onsubmit="SubmitForm(event)">
-                    <span class="button_lg">
-                        <span class="button_sl"></span>
-                        <span class="button_text">Generate Image</span>
-                    </span>
-                </button><br><br><br>
+    <div class="d-flex align-items-center justify-content-center">
+        <form id="image-form" class="card">
+            <br>
+            <div class="form__group field">
+                <input id="prompt" placeholder="Name" class="form__field" required></textarea>
+                <label class="form__label" for="name">Describe your Image</label>
             </div>
+            <br>
+            <div class="dropdown" id="ImageDropDown">
+                <input id="imageSize" type="text" placeholder="Image Size" readonly value="">
+                <div class="option">
+                    <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
+                    <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
+                    <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
+                </div>
+            </div>
+
+            <!--<br><br>
+                <div class="dropdown" id="ImageDropDown">
+                <input id="ImageSizeDropDown" type="text" placeholder="Image Size" readonly>
+                <div class="option">
+                    <div class="option-items" onclick="show('Small')"><ion-icon name="image-outline" class="small-icon"></ion-icon>Small</div>
+                    <div class="option-items" onclick="show('Medium')"><ion-icon name="image-outline" class="medium-icon"></ion-icon>Medium</div>
+                    <div class="option-items" onclick="show('Large')"><ion-icon name="image-outline" class="large-icon"></ion-icon>Large</div>
+                </div>
+            </div> -->
+
+            <br><br>
+            <button class="button" type="submit" onsubmit="SubmitForm(event)">
+                <span class="button_lg">
+                    <span class="button_sl"></span>
+                    <span class="button_text">Generate Image</span>
+                </span>
+            </button><br>
+        </div>
     </div>
     <br><br>
+    <center>
+        <div id="image-viewer" class="card display-none">
+            <img id="image" >
+        </div>
+    </center>
+    <script src="js/main.js"></script><br><br>
     
-    <script>
-        // Set the value of the selected item to the dropdown text 
-        function show(optionText){
-            // console.log(optionText);
-            document.querySelector('#imageSize').value = optionText;
-        }
-        // Open and close dropdown
-        const DropDown = document.querySelector("#ImageDropDown");
-        DropDown.onclick = () => { 
-            DropDown.classList.toggle('open');
-        };
-    </script>
-    <script src="js/main.js"></script>
 </body>
 </html>

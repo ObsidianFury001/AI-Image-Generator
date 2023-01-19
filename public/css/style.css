@@ -39,7 +39,7 @@ body {
 /* ---------- 0. Title ----------*/
 .page-title {
     /* color: var(--primary); */
-    background: -webkit-linear-gradient(45deg, #01f1f1, #534dff, #dc4572, #dbdd23);
+    background: -webkit-linear-gradient(45deg, #01ffea, #01f1f1, #544eff, #dc4572,  #e6ea00, #dbdd23);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -29,7 +29,8 @@ body {
     padding: 1%;
     padding-top: 20px;
     min-height: 100vh;
-    background-color: hsl(0, 2%, 10%) !important;
+    /* background-color: hsl(0, 2%, 10%) !important; */
+    background-color: hsl(222, 47%, 11%) !important;
     /* background-color: hsl(0, 0%, 94%); */
     color: black;
     font-family: 'Actor';

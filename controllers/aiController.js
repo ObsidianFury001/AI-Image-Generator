@@ -10,7 +10,7 @@ const GenerateImage = async ( req, res ) => {
     const { prompt, size } = req.body;
 
     imageSize = size === "Small" ? "256x256" : size === "Medium" ? "512x512" : "1024x1024";
-    console.log("Prompt: ", prompt, "\nSize:", size);
+    // console.log("Prompt: ", prompt, "\nSize:", size);
     no_of_images = 2;
 
     try 
